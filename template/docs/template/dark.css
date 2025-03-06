@@ -2,8 +2,9 @@
 
 /* === Colors ====================================== */
 :root {
-  --primary-hue: 230deg;
-  --secondary-hue: 200deg;
+  --primary-hue: 72deg;
+  --secondary-hue: 192deg;
+  --tertiary-hue: 144deg;
   --background: white;
   --text-color: black;
   --code-block-bg: hsl(var(--secondary-hue) 20% 20%);
@@ -15,9 +16,9 @@
 
 header {
   color: white;
-  background: hsl(var(--primary-hue) 15% 50%);
-  border-bottom: solid thick hsl(var(--secondary-hue), 20%, 30%);
-  text-shadow: 2px 2px 2px #8888;
+  background: hsla(var(--tertiary-hue), 20%, 30%);
+  border-bottom: solid thick #0005; /* hsl(var(--secondary-hue), 57%, 40%); */
+  text-shadow: 2px 2px 2px #0008;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,11 +30,6 @@ header {
    --header-text-color: hsl(var(--primary-hue) 50% 60%);
    --nav-text: hsl(var(--primary-hue) 40% 60%);
    --nav-text-hover: hsl(var(--primary-hue) 40% 70%);
-  }
-
-  header {
-    color: hsl(var(--primary-hue) 30% 70%);
-    background: hsl(var(--primary-hue) 10% 20%);
   }
 }
 
@@ -343,8 +339,13 @@ div.sourceCode {
     border: solid 2pt hsl(var(--primary-hue) 40% 30%);
     box-shadow: 2px 2px 2px #8884;
     border-radius: 5pt;
-    padding: 10pt 10pt 10pt 15pt;
+    padding: 10pt 10pt 10pt 10pt;
     overflow: hidden;
+}
+
+div.noweb-reference {
+    padding: 0pt 10pt 0pt 10pt;
+    font-style: italic;
 }
 
 .doctest {
@@ -407,7 +408,11 @@ html {
 /* === Tablet layout =============================== */
 @media only screen and (min-width: 600px) and (max-width: 1600px) {
     header {
-        padding: 20pt 20pt;
+        padding: 15pt 20pt;
+    }
+
+    header h1 {
+        padding-top: 10pt;
     }
 
     #contents .links #nlesc-logo {
@@ -437,7 +442,7 @@ html {
         display: flex;
         flex-flow: row wrap;
     }
-    
+
     #menu ul {
         border-left: solid thick #8884;
         padding-left: 10pt;
@@ -493,7 +498,7 @@ html {
     #contents .buttons img {
         margin: 0pt;
     }
-      
+
   /* For tablets: */
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
@@ -537,7 +542,7 @@ html {
     #menu { order: 3; }
     #main { order: 2; }
     /* #contents { display: block; order: 1; } */
-      
+
     #contents {
         order: 1;
         display: block;
@@ -590,4 +595,3 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
-

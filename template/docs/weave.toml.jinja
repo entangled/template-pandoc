@@ -11,7 +11,7 @@ pandoc_style = "--css dark.css --highlight-style zenburn"
 pandoc_filters = """
 --lua-filter ${filter_dir}/include-contents.lua \
 --lua-filter ${filter_dir}/include.lua \
---lua-filter ${filter_dir}/annotate.lua \
+--lua-filter ${filter_dir}/code-cross-ref.lua \
 --lua-filter ${filter_dir}/details.lua \
 --lua-filter ${filter_dir}/eqnos.lua \
 --lua-filter ${filter_dir}/eval.lua \
@@ -27,7 +27,7 @@ collect = "static"
 [call.args]
 srcdir = "docs/template"
 tgtdir = "docs/site"
-basename = ["dark.css"]
+basename = ["dark.css", "logo.svg"]
 
 [template.pandoc]
 requires = [

@@ -45,13 +45,13 @@ Equations need to be enclosed in a span (`[]{}` syntax) and have an identifier s
 
 In the following example we compute Euler's number using the formula,
 
-[$$e = 1 + {1 \over 2!} + {1 \over 3!} + \dots$$]{#eq:eulers-number}
+[$$e = 1 + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + \dots$$]{#eq:eulers-number}
 
 :::callout
 
 ### Taylor Expansions
 
-This can be derived from the Taylor expansion of $f(x) = exp(x)$.
+This can be derived from the Taylor expansion of $f(x) = \exp(x)$.
 :::
 
 ## Code blocks
@@ -63,7 +63,7 @@ double eulers_number() {
   double e = 2.0;
   double k = 1.0;
   unsigned i = 1;
-  
+
   while (k > DBL_EPSILON) {
     k /= ++i;
     e += k;

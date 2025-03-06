@@ -17,7 +17,7 @@ while true; do
   copier recopy "${dir}" -A -w
   pushd "${dir}"
   entangled tangle
-  brei weave
+  brei weave -B
   popd
 done
 
