@@ -5,7 +5,7 @@ ${pandoc_format} ${pandoc_style} ${pandoc_template} ${pandoc_filters} \
 -M title='${title}' -M subtitle='${subtitle}' \
 -M contents_file='docs/contents.md'"""
 
-pandoc_format = "-s -t html5 --section-divs --toc --toc-depth 2 --mathjax"
+pandoc_format = "-s -f markdown+emoji -t html5 --section-divs --toc --toc-depth 2 --mathjax"
 pandoc_template = "--template docs/template/template.html"
 pandoc_style = "--css dark.css --highlight-style zenburn"
 pandoc_filters = """
