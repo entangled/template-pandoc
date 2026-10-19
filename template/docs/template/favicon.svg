@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Black and white version of the Entangled logo, for use as favicon -->
+<svg
+   width="64"
+   height="64"
+   viewBox="-2 -2 104 104"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  <style>
+    path { fill: none; stroke-linecap: round; }
+    .outline { stroke: #ffffff; stroke-width: 15; }
+    .strand { stroke: #000000; stroke-width: 9; }
+    @media (prefers-color-scheme: dark) {
+      .outline { stroke: #000000; }
+      .strand { stroke: #ffffff; }
+    }
+  </style>
+  <defs>
+    <path id="horizontal" d="M 5,45.013134 C 44.883876,62.683449 69.664966,63.539942 94.999999,65.013136" />
+    <path id="diagonal" d="M 5,94.999999 C 15,50 50,15 94.999999,5" />
+    <path id="curve" d="M 4.9193553,4.987985 C 50,5 50,95.040952 94.949948,95.028937" />
+    <clipPath id="crossing">
+      <rect x="40" y="40" width="65" height="45" />
+    </clipPath>
+  </defs>
+  <use href="#horizontal" class="outline" />
+  <use href="#horizontal" class="strand" />
+  <use href="#diagonal" class="outline" />
+  <use href="#diagonal" class="strand" />
+  <use href="#curve" class="outline" />
+  <use href="#curve" class="strand" />
+  <g clip-path="url(#crossing)">
+    <use href="#horizontal" class="outline" />
+    <use href="#horizontal" class="strand" />
+  </g>
+</svg>
