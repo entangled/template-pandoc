@@ -66,7 +66,7 @@ function CodeBlock(elem)
         if link == nil then
             table.insert(code_lines, l)
         else
-            if code_lines ~= {} then
+            if #code_lines ~= 0 then
                 local text = ("\n"):join(code_lines)
                 table.insert(blocks, pandoc.CodeBlock(text, {class = elem.classes[1]}))
                 code_lines = {}
@@ -74,7 +74,7 @@ function CodeBlock(elem)
             table.insert(blocks, pandoc.Div({ pandoc.Link(l, "#" .. link) }, { class="noweb-reference" }))
         end
     end
-    if code_lines ~= {} then
+    if #code_lines ~= 0 then
         local text = ("\n"):join(code_lines)
         table.insert(blocks, pandoc.CodeBlock(text, {class = elem.classes[1]}))
         code_lines = {}
