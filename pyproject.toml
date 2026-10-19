@@ -1,0 +1,13 @@
+[project]
+name = "template-pandoc"
+version = "0.1.0"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "entangled-cli",
+]
+
+[tool.uv.sources]
+entangled-cli = { path = "../entangled.py", editable = true }

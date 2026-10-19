@@ -25,7 +25,11 @@ entangled tangle
 brei weave
 ```
 
-The site will appear in `docs/site`. Please check out `docs/index.md` (and the rendered page) to see some examples of what this template can do for you.
+The site will appear in `docs/site`. Please check out `docs/index.md` (and the rendered page) to see some examples of what this template can do for you. You can run a live-reloading server using Entangled:
+
+```shell
+entangled serve --build 'entangled sync && brei weave' --watch docs docs/site
+```
 
 # License
 
@@ -34,4 +38,3 @@ The contents of this template fall under the Apache License v2. It is advised th
 ## Credits
 
 This package was created with [Entangled](https://entangled.github.io) and the [Entangled Pandoc Template](https://github.com/entangled/template-pandoc) using [Copier](https://github.com/copier-org/copier).
-

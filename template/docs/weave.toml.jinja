@@ -11,6 +11,7 @@ pandoc_style = "--css dark.css --highlight-style zenburn"
 pandoc_filters = """
 --lua-filter ${filter_dir}/include-contents.lua \
 --lua-filter ${filter_dir}/include.lua \
+--lua-filter ${filter_dir}/quarto_header.lua \
 --lua-filter ${filter_dir}/code-cross-ref.lua \
 --lua-filter ${filter_dir}/details.lua \
 --lua-filter ${filter_dir}/eqnos.lua \

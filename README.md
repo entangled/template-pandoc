@@ -12,3 +12,13 @@ brei weave
 ```
 
 The rendered web-page should be in `docs/site`.
+
+## Testing
+
+To develop the template or perform tests, clone the repository in the same place as `entangled.py` and `copier copy` the template to a `test` folder,
+
+```bash
+uv init --bare
+uv add --dev --editable ../entangled.py
+copier copy . test
+```
