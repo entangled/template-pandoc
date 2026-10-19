@@ -53,6 +53,28 @@ window.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('section[id]').forEach((section) => {
 		observer.observe(section);
 	});
+
+	// Hamburger menu for the site contents on smaller screens
+	const toggle = document.getElementById('contents-toggle');
+	const contents = document.getElementById('contents');
+	if (toggle && contents) {
+		const setOpen = (open) => {
+			document.body.classList.toggle('contents-open', open);
+			toggle.setAttribute('aria-expanded', open);
+		};
+		toggle.addEventListener('click', (event) => {
+			event.stopPropagation();
+			setOpen(!document.body.classList.contains('contents-open'));
+		});
+		document.addEventListener('click', (event) => {
+			if (!contents.contains(event.target) || event.target.closest('a')) {
+				setOpen(false);
+			}
+		});
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') setOpen(false);
+		});
+	}
 });
 </script>
   <!--[if lt IE 9]>
@@ -60,27 +82,34 @@ window.addEventListener('DOMContentLoaded', () => {
   <![endif]-->
 </head>
 <body>
+$if(contents)$
+<button id="contents-toggle" aria-controls="contents" aria-expanded="false" aria-label="Site menu">☰</button>
+$endif$
 $for(include-before)$
 $include-before$
 $endfor$
 $if(title)$
 <header id="title-block-header">
-<div class="row">
-<div class="spacing col-3 col-s6">&nbsp;</div>
-<div class="col-3 col-s-3"><img src="logo.svg" alt="Entangled logo" width="100px"></div>
-<div class="col-6 col-s-9">
+<div class="title-bar">
+<img class="logo" src="logo.svg" alt="Entangled logo">
+<div class="title-text">
 <h1 class="title">$title$</h1>
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
+</div>
+$if(author)$
+<div class="byline">
 $for(author)$
-<p class="author">$author$</p>
+<span class="author">$author$</span>
 $endfor$
 $if(date)$
-<p class="date">$date$</p>
+<span class="date">$date$</span>
 $endif$
 </div>
-<div class="spacing col-3 col-s3">&nbsp;</div>
+$elseif(date)$
+<div class="byline"><span class="date">$date$</span></div>
+$endif$
 </div>
 $if(abstract)$
 <div class="abstract">
